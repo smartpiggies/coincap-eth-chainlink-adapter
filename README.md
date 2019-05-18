@@ -1,0 +1,1 @@
+# coincap-eth-chainlink-adapter
