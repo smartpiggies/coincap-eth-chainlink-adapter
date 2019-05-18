@@ -44,11 +44,12 @@ const createRequest = (input, callback) => {
     then(() => {
       callback("good", {
         jobRunID: input.id,
-        data: response_vals.reduce((a, b) => a + b) / response_vals.length,
+        data: (response_vals.reduce((a, b) => a + b) / response_vals.length).toFixed(2),
         statusCode: response_vals_statusCode
       })
     })
 
+/**
     // given the response vals, do something with them
     // if first_try_val is not undefined or null, send that back
     if (first_try_val !== null && first_try_val !== undefined) {
@@ -68,7 +69,11 @@ const createRequest = (input, callback) => {
     }
     // for now, if nothing came through cleanly, just do nothing
     // contract will need to re-trigger this function
+**/
+
+
 }
+
 
 // boilerplate for serverless systems - may need modification
 exports.gcpservice = (req, res) => {
