@@ -56,12 +56,12 @@ const createRequest = (input, callback) => {
         // (can make fancier logic later but do this for now)
         callback(response_vals_statusCode, {
             jobRunID: input.id,
-            data = response_vals.reduce((a, b) => a + b) / response_vals.length,
-            statusCode = response_vals_statusCode
+            data: response_vals.reduce((a, b) => a + b) / response_vals.length,
+            statusCode: response_vals_statusCode
         });
     }
     // for now, if nothing came through cleanly, just do nothing
-    // contract will need to re-trigger this function   
+    // contract will need to re-trigger this function
 }
 
 // boilerplate for serverless systems - may need modification
