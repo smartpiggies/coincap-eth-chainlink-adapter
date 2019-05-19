@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const createRequest = require('../fetchtest.js').createRequest;
+const createRequest = require('../index.js').createRequest;
 
 describe('createRequest', () => {
 
@@ -17,10 +17,11 @@ describe('createRequest', () => {
     it('Should return data to the node', function () {
       createRequest(req, (statusCode, data) => {
         //assert.equal(statusCode, 200);
-        assert.equal(statusCode, "good", "statusCode did not return correctly");
+        assert.equal(statusCode, 200, "statusCode did not return correctly");
         assert.equal(data.jobRunID, jobID, "jobID did not return correctly");
         //assert.isNotEmpty(data.data, "data did not return correctly");
-        console.log(data.data)
+        console.log(req)
+        console.log(data)
       }) //end request
 
     }) //end test
